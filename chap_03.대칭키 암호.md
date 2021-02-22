@@ -461,3 +461,6 @@ SKIPJACK | 미국 | 1990 | Fortezza카드에 사용 | 64 | 80 | 32
 --- | --- | ---
 ECB | C_{i} = E_{k}(P_{i}), i = 1, 2, ...N | P_{i} = D_{k}(C_{i}), i = 1, 2, ...N
 CBC | C_{1} = E_{k}(P_{i}⊕IV)<br/>C_{i} = E_{k}(P_{i}⊕C_{i-1}), i = 2, 3, ...N | P_{1} = D_{k}(C_{i})⊕IV<br/>P_{i} = D_{k}(C_{i}⊕C_{i-1}), i = 2, 3, ...N
+CFB | C_{i} = E_{k}(C_{i-1})⊕P_{i} | P_{i} = E_{k}(C_{i-1})⊕C_{i} (단, C_{0} = IV)
+OFB | C_{i} = P_{i}⊕O_{i} | P_{i} = C_{i}⊕O_{i}<br/>(단, O_{i} = E_{k}(I_{i}), I_{i} = O_{i-1}, I_{0} = IV)
+CTR | C_{i} = P_{i}⊕E_{k}(T_{i}), i = 1, 2, ...N-1 | P_{i} = C_{i}⊕E_{k}(T_{i}), i = 1, 2, ...N-1
